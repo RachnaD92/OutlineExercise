@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AppConstants } from 'src/app/constants/app-contants';
-import { DataManagerService } from 'src/app/services/data-manager.service';
+import { AppConstants } from '../../constants/app-contants';
+import { DataManagerService } from '../../services/data-manager.service';
 
 @Component({
   selector: 'app-item',
