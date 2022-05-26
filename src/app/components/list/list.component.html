@@ -1,0 +1,34 @@
+<div>
+    <span>Auto Increment</span><br />
+    <input type="radio" [checked]="autoIncrementMoney" (click)="autoIncTrigger(true)">Enable<br />
+    <input type="radio" [checked]="!autoIncrementMoney" (click)="autoIncTrigger(false)">Disable<br />
+</div>
+<div>
+    <span>Row/Column switch</span><br />
+    <input type="radio" [checked]="layoutIsRow" (click)="changeRadio(false)">Is Row<br />
+    <input type="radio" [checked]="!layoutIsRow" (click)="changeRadio(true)">Is column<br />
+</div>
+<div *ngIf="layoutIsRow">
+    <div fxLayout="row" >
+        <div *ngFor="let itemObj of items">
+            <div class="container item">
+                <button (click)="updateMoney(10, itemObj)">Send Money to {{itemObj.name}}</button>
+                <button (click)="createTransaction(-10, itemObj)">Get Money From {{itemObj.name}}</button>
+                <app-item [money]="itemObj.money" [name]="itemObj.name" [id]="itemObj.id"></app-item>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!layoutIsRow">
+    <div fxLayout="column">
+        <div *ngFor="let itemObj of items">
+            <div class="container item">
+                <button (click)="updateMoney(10, itemObj)">Send Money to {{itemObj.name}}</button>
+                <button (click)="createTransaction(-10, itemObj)">get Money From {{itemObj.name}}</button>
+                <app-item [money]="itemObj.money" [name]="itemObj.name" [id]="itemObj.id"></app-item>
+            </div>
+        </div>
+
+    </div>
+</div>

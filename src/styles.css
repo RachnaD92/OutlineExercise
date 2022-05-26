@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+.container {
+    margin: 10px;
+  }
+  
+  .item {
+    border-radius: .2em;
+    margin: 2px;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 2em;
+    padding: 4em 1em;
+    text-transform: uppercase;
+  }
