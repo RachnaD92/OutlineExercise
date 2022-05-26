@@ -11,6 +11,7 @@
 
     layoutIsRow = true;
     autoIncrementMoney = false;
+    durationForInterval = 60000;
     amountInterval: any;
     constructor(private cd: ChangeDetectorRef, private dataManager: DataManagerService) {
       this.point11Resolution();
@@ -81,7 +82,7 @@
         if (this.autoIncrementMoney) {
           this.updateAllChildren();
         }
-      }, 10000)
+      }, this.durationForInterval)
     }
 
     updateAllChildren() {
